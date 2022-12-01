@@ -63,19 +63,9 @@ namespace ClonOSU {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _297845_middle {
+        internal static System.Drawing.Bitmap Handler {
             get {
-                object obj = ResourceManager.GetObject("_297845_middle", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap img_509737 {
-            get {
-                object obj = ResourceManager.GetObject("img_509737", resourceCulture);
+                object obj = ResourceManager.GetObject("Handler", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -86,6 +76,16 @@ namespace ClonOSU {
         internal static System.Drawing.Bitmap menu_background_5 {
             get {
                 object obj = ResourceManager.GetObject("menu_background_5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Target {
+            get {
+                object obj = ResourceManager.GetObject("Target", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
