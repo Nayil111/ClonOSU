@@ -59,6 +59,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource1.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -93,6 +96,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\img_509737.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1612233149_48-p-fioletovii-krug-na-belom-fone-61.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\41f4df164dcc0f804b3e1810e3273af8.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1621640641_22-phonoteka_org-p-kruglii-rozovii-fon-28.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
