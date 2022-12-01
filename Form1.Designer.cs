@@ -32,6 +32,7 @@ namespace ClonOSU
             this.components = new System.ComponentModel.Container();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.Scorelabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // timer1
@@ -45,17 +46,29 @@ namespace ClonOSU
             this.timer2.Enabled = true;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
+            // Scorelabel
+            // 
+            this.Scorelabel.AutoSize = true;
+            this.Scorelabel.Font = new System.Drawing.Font("Elephant", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Scorelabel.Location = new System.Drawing.Point(716, 9);
+            this.Scorelabel.Name = "Scorelabel";
+            this.Scorelabel.Size = new System.Drawing.Size(49, 47);
+            this.Scorelabel.TabIndex = 0;
+            this.Scorelabel.Text = "0";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ClonOSU.Resource1.menu_background_5;
-            this.ClientSize = new System.Drawing.Size(1005, 608);
+            this.ClientSize = new System.Drawing.Size(859, 499);
+            this.Controls.Add(this.Scorelabel);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -63,6 +76,7 @@ namespace ClonOSU
 
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Label Scorelabel;
     }
 }
 

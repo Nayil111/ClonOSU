@@ -13,10 +13,10 @@ namespace ClonOSU
     public partial class Form1 : Form
     {
         public Bitmap HandlerTexure = Resource1.Handler;
-        public Bitmap TargetTexure = Resource1.Target;
+        public Bitmap TargetTexture = Resource1.Target;
         private Point _targetPosition = new Point (300, 300);
         private Point _direction = Point.Empty;
-        
+        private int _Score = 0;
 
         public Form1()
         {
@@ -42,24 +42,30 @@ namespace ClonOSU
            
             var localposition = this.PointToClient(Cursor.Position);
 
-            int _directionX = 10;
-            _targetPosition.X += _directionX * 10;
-            int _directionY = 10;
-            _targetPosition.Y += _directionY * 10;
+         
+            _targetPosition.X += _direction.X * 10;
+           
+            _targetPosition.Y += _direction.Y * 10;
             
             var handlerRect  = new Rectangle(localposition.X - 50, localposition.Y - 50, 100, 100);
-            var targetRect = new Rectangle(localposition.X - 50, localposition.Y - 50, 100, 100);
+            var targetRect = new Rectangle(_targetPosition.X - 50, _targetPosition.Y - 50, 100, 100);
            
             g.DrawImage(HandlerTexure, handlerRect);
-            g.DrawImage(TargetTexure, targetRect);
-            
+            g.DrawImage(TargetTexture,targetRect);
+
             if (_targetPosition.X < 0 || _targetPosition.X > 500);
             {
-                _targetPosition.X = 200;
+                _direction.X *= -1;
             }
-            if (_targetPosition.Y > 0 || _targetPosition.Y < 500);
+            if (_targetPosition.Y < 0 || _targetPosition.Y > 500);
             {
-                _targetPosition.Y = 200;
+                _direction.Y *= -1;
+            }
+            Point between = new Point(localposition.X - _targetPosition.X, localposition.Y - _targetPosition.Y);
+            float distance = (float)Math.Sqrt((between.X * between.X) + (between.Y * between.Y));
+            if (distance < 20) ;
+            {
+                AddScore(1);
             }
         }
 
@@ -72,8 +78,18 @@ namespace ClonOSU
         {
             Random r = new Random();
              timer2.Interval = r.Next(25, 1000);
-            _direction.X = r.Next(-1, 1);
-            _direction.Y = r.Next(-1, 1);
+            _direction.X = r.Next(-1, 2);
+            _direction.Y = r.Next(-1, 2);
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void AddScore(int Score)
+        {
+            _Score += Score;
+            Scorelabel.Text = _Score.ToString();
         }
     }
 }
